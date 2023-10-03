@@ -26,10 +26,10 @@ const wrongPromptInputAlert = (answer, subject) => {
 }
 
 /**
-* Ask user something via prompt
+* Ask the user something via a prompt
 * @param   {string}      question    what do you want to ask?
 * @param   {string}      subject     will be inserted to 'Oh, It's so sad that you didn't enter your ${subject} alert.', If user presses "Cancel"
-* @param   {function}    predicateFn checks the validity of data from user
+* @param   {function}    predicateFn checks the validity of data from the user
 * @returns {string|null} the result of the prompt input or null if the user presses "Cancel"
 */
 const askUserPrompt = (question, subject, predicateFn) => {
@@ -93,7 +93,7 @@ const userAge = askUserPrompt('What is your year of birth?', 'year of birth', (a
     switch (true) {
         case answer.trim().length === 0: // empty input (include spaces)
         case Object.is(+answer, NaN): // input is a NaN
-        case +answer > currYear: // input is a number but it higher than current year
+        case +answer > currYear: // input is a number but it is higher than the current year
             wrongPromptInputAlert(answer, `a year of birth, not higher than ${currYear}`);
             return false; // break is redundant
         default:
@@ -123,15 +123,15 @@ let userInfo = '';
 
 userInfo += userAge ?
     `Your are ${(new Date().getFullYear()) - userAge} year old` :
-    "You didn't entered your year of birth";
+    "You didn't enter your year of birth";
 userInfo += "\n\n"
 userInfo += userCity ?
     userCityToMessage(userCity) :
-    "You didn't entered the name of city where you live";
+    "You didn't enter the name of the city where you live";
 userInfo += "\n\n"
 userInfo += userSport ?
     userSportToMessage(userSport) :
-    "You didn't entered the name of favorite sport";
+    "You didn't enter the name of your favorite sport";
 
 alert(userInfo);
 alert('Bye!');
