@@ -104,7 +104,7 @@ const userAge = askUserPrompt('What is your year of birth?', 'year of birth', (a
 const userCity = askUserPrompt('What city do you live in?', 'city', (answer) => {
     if (answer.trim().length === 0) { // empty input (include spaces)
         wrongPromptInputAlert(answer, `a name of where you live`);
-        return false; // break is redundant
+        return false;
     } else {
         return true;
     }
@@ -113,7 +113,7 @@ const userCity = askUserPrompt('What city do you live in?', 'city', (answer) => 
 const userSport = askUserPrompt( 'What is your favorite sport?', 'favorite sport', (answer) => {
     if (answer.trim().length === 0) {// empty input (include spaces)
         wrongPromptInputAlert(answer, `favorite sport`);
-        return false; // break is redundant
+        return false;
     } else {
         return true;
     }
